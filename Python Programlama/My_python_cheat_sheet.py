@@ -35,7 +35,7 @@ name=" Hanbey Ozan Kirmizigul "
 name.strip()
 name_2="**Hanbey Ozan Kirmizigul**"
 name_2.strip("*")
-
+# =============================================================================
 
 ##METODLARA GİRİŞ
 
@@ -118,7 +118,7 @@ liste.sort()#Listeyi Büyükten Küçüğe Sıralar
 #clear()
 liste=[5,4,3,2,1]
 liste.clear()
-
+# =============================================================================
 
 
 #TUPLE(Demet)
@@ -129,7 +129,7 @@ t_2="ahmet","mehmet",[1,2,3,4]
 
 #Tuple Eleman İşlemleri
 t[0]
-
+# =============================================================================
 
 #DİCTİONART(Sözlük)
 #Sözlük Oluşturma
@@ -152,6 +152,7 @@ sozluk = {"REG" : "Regresyon Modeli",
           "CART" : "Classification and Reg"}
 
 sozluk["GBM"] = "Gradient Boosting Mac"
+# =============================================================================
 
 #SETLER(Kümeler)
 #Sırasız,Unique,Değiştirilebilir
@@ -204,3 +205,132 @@ set1.issubset(set2)
 set2.issubset(set1)#Set2 Deki Bütün Elemanların Set1'in İçinde Olup Olmadığını Sorgular
 
 set1.issuperset(set2)#Set1 Set2'yi Kapsıyor Mu Sorgusunu Yapar
+# =============================================================================
+
+# =============================================================================
+# ##FONKSİYONLAR
+# =============================================================================
+
+#Fonksiyon Tanımlama
+
+def kare_al(x):
+    print(x**2)
+    
+kare_al(9)
+
+def carp(x,y):
+    print("Sonuc: "+str(x*y))
+
+carp(11,2)
+
+
+def topla(x,y):
+    return x+y
+
+toplam=topla(5, 8)
+
+# Local Ve Global Değişkenler
+
+x=10#Global Değişken
+y=20
+def topla(x,y):
+    x#Local Değişken
+    y
+    return x+y
+
+topla(3,2)
+
+# Local Etki Alanından Global Etki Alanını Değiştirmek
+liste=[]
+
+def ekle(y):
+    liste.append(y)
+    print(str(y)+": Eklendi")
+    
+ekle("Deneme")
+
+# İf & Else
+Gelir=20000
+Gider=20000
+
+if Gelir>Gider:
+    print("Karınız: "+str(Gelir-Gider))
+elif Gelir==Gider:
+    print("Gelir Gideriniz Eşit")
+else:
+    print("Borcunuz: "+str(Gider-Gelir))
+    
+    
+# UYGULAMA
+#Kişi Adını Gelirini Ve Giderini Alıp Kaydeden Ve Bir Gelir Gider Sonucu Çıkartan Kod
+isim=[]
+def isim_kaydet(x):
+    isim.append(x)
+isim_kaydet(input("İsminizi Giriniz: "))
+
+gelir=[]
+gider=[]
+def gelir_gider_kaydet(x,y):
+    gelir.append(x)
+    gider.append(y)
+gelir_gider_kaydet(int(input("Gelirinizi Girin: ")),int(input("Giderinizi Girin: ")))
+str(isim[0])
+if gelir>gider:
+    print("Sayın "+isim[0]+" Karınız: "+str(gelir[0]-gider[0]))
+elif gelir==gider:
+    print("Sayın "+str(isim[0])+" Gelir Gider Eşit")
+else:
+    print("Sayın "+isim[0]+" Zararınız: "+str(gider[0]-gelir[0]))
+
+
+# =============================================================================
+# # DÖNGÜLER
+# =============================================================================
+
+#For Döngüsü
+for i in range(3):
+    print("A")
+
+liste=["a","b","c","d","e"]
+for i in liste:
+    print(i)
+
+#maaslara yuzde 20 zam yapilacak gerekli kodlari
+#yaziniz.
+
+maaslar=[1000,2000,10000]
+
+def zam(x):
+    x=x*1.20
+    return x
+
+for i in maaslar:
+    print("Yeni Maaş: "+str(int(zam(i))))
+    
+    
+
+#Break Ve Continue
+maaslar=[1000,2000,10000,7000,3000]   
+maaslar.sort()
+
+for i in maaslar:
+    if i==7000:
+        break#7000 Değeri Geldiğinde Döngüden Çık
+    print(i)
+    
+    
+for i in maaslar:
+    if i==7000:
+        continue#7000 Değeri Geldiğinde 7000'i Atlayıp Döngüye Devam Et
+    print(i)
+    
+#While
+
+sayi=1
+while sayi<=10:
+    print(sayi)
+    sayi+=1   
+    
+
+
+
