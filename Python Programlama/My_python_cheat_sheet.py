@@ -331,6 +331,165 @@ while sayi<=10:
     print(sayi)
     sayi+=1   
     
+# =============================================================================
+# # NESNE YÖNELİMLİ PROGRAMLAMA
+# =============================================================================
+
+class Araba():  #Class Tanımlama
+    marka="Bmw"
+    model=[]
+    yil=[]
+
+Araba.marka #Class İçindeki Veriye Erişmek
+Araba.marka="Audi"#Class İçindeki Veriyi Değiştirmek
+
+#Sinif Orneklendirmesi (instantiation)
+
+class VeriBilimci():
+    bolum = ''
+    sql = 'Evet'
+    deneyim_yili = 0
+    bildigi_diller = []
+    
+ali = VeriBilimci()
+
+ali.sql
+ali.deneyim_yili
+ali.bolum
+ali.bildigi_diller.append("Python")
+ali.bildigi_diller
+
+veli = VeriBilimci()
+veli.sql
+veli.bildigi_diller#Veliye Python Girilmemesine Rağmen Aliye Append Edildiği İçin Velidede Gözüktü
 
 
+#Örnek Özellikleri
+
+class VeriBilimci():
+    bolum=[]
+    sql = 'Evet'
+    def __init__(self):
+        self.bolum=[]
+        
+ozan=VeriBilimci()
+ahmet=VeriBilimci()
+
+ozan.bolum.append("Bilgisayar Müh")
+ozan.bolum
+ahmet.bolum
+VeriBilimci.bolum
+
+
+# Örnek Metodları
+class VeriBilimci():
+    calisanlar = []
+    def __init__(self):
+        self.bildigi_diller = []
+        self.bolum = ''
+    def dil_ekle(self, yeni_dil) :
+        self.bildigi_diller.append(yeni_dil)
+
+
+ali = VeriBilimci()
+ali.bildigi_diller
+ali.bolum
+
+veli = VeriBilimci()
+veli.bildigi_diller
+veli.bolum
+
+dir(VeriBilimci)
+
+VeriBilimci.dil_ekle
+VeriBilimci.dil_ekle("R")
+
+ali.dil_ekle("R")
+ali.bildigi_diller
+
+veli.dil_ekle("Python")
+veli.bildigi_diller
+
+
+# =============================================================================
+# FONKSİYONEL PROGRAMLAMAYA GİRİŞ
+# =============================================================================
+
+new_sum = lambda a,b: a + b
+new_sum(4,5)
+
+
+sirasiz_liste = [('b', 3), ('a', 8), ('d', 12), ('c', 1)]
+sirasiz_liste
+
+sorted(sirasiz_liste, key = lambda x: x[1])
+
+
+#Verilen Listedeki İndisi Aynı Elemanları Toplayıp Başka Bir Listeye Aktarmak
+##OOP
+a=[1,2,3,4]
+b=[5,6,7,8]
+ab=[]
+
+for i in range(0,len(a)):
+    ab.append(a[i]+b[i])
+##Fonkisyonel Programlama İle
+
+import numpy as np
+
+a=np.array([1,2,3,4])
+b=np.array([5,6,7,8])
+
+a+b
+
+#map , filter , reduce 
+
+#map
+#Listedeki Elemanlara 10 Eklemek
+liste=[1,2,3,4]
+
+a=list(map(lambda x: x+10,liste))#Bir Nesne Üzerinde Fonkisyon Çalıştırmaya Yarar
+
+# filter
+# Listedeki Elemanlardan 2'ye Tam Bölünen Sayıları Bulma
+liste=[1,2,3,4,5,6,7,8,9,10]
+
+b=list(filter(lambda x: x%2==0,liste))
+
+#reduce
+
+from functools import reduce
+
+liste=[1,2,3]
+
+reduce(lambda a,b: a+b,liste)#Bütün Elemanları Toplayan Fonkisiyon
+
+#Hatalar İstisanlar(exceptions)
+
+#ZeroDivisionError hatasi
+a = 10
+b = 0
+
+a/b
+
+
+try:
+    print(a/b)
+except ZeroDivisionError:
+    print("Payda da sifir olmaz")
+
+
+#tip hatasi
+    
+a = 10    
+b = "2"
+
+a / b
+
+try:
+    print(a/b)
+except TypeError:
+    print("Sayi ve string problemi")
+    
+    
 
